@@ -11,7 +11,7 @@ const App = () => {
 				<h1 className="text-4xl text-blue-300 mb-6 font-bold text-center ">
 					Trello Clone
 				</h1>
-				<div className="flex justify-between ">
+				<div className="flex lg:justify-between justify-center flex-wrap lg:flex-nowrap">
 					<Board title="Backlog">
 						<Tile />
 						<Tile />
