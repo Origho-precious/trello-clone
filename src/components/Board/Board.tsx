@@ -29,7 +29,9 @@ const Board: React.FC<IBoardProps> = ({ title }) => {
 	};
 
 	return (
-		<div className="bg-gray-200 w-80 h-full pb-3 rounded mr-6 mb-6">
+		<div
+			className="bg-gray-200 w-11/12 sm:w-10/12 md:w-80 h-full pb-3 rounded md:mr-6 mb-6"
+		>
 			<h2 className="px-4 py-2 text-center text-black text-lg font-bold">
 				{title}
 			</h2>
