@@ -1,6 +1,4 @@
 import Board from "./components/Board/Board";
-import Tile from "./components/Tile/Tile";
-
 const App = () => {
 	return (
 		<div
@@ -12,26 +10,10 @@ const App = () => {
 					Trello Clone
 				</h1>
 				<div className="flex lg:justify-between justify-center flex-wrap lg:flex-nowrap">
-					<Board title="Backlog">
-						<Tile />
-						<Tile />
-						<Tile />
-					</Board>
-					<Board title="TO DOs">
-						<Tile />
-						<Tile />
-						<Tile />
-					</Board>
-					<Board title="DOING">
-						<Tile />
-						<Tile />
-						<Tile />
-					</Board>
-					<Board title="DONE">
-						<Tile />
-						<Tile />
-						<Tile />
-					</Board>
+					<Board title="Backlog"/>
+					<Board title="TO DOs"/>
+					<Board title="DOING"/>
+					<Board title="DONE"/>
 				</div>
 			</div>
 		</div>
