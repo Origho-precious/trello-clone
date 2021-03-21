@@ -1,11 +1,12 @@
 import { useState } from "react";
-import Tile from '../Tile/Tile';
+import Tile from "../Tile/Tile";
+import { ReactSortable } from "react-sortablejs";
 
 interface IBoardProps {
 	title: string;
 }
 
-interface ICard{
+interface ICard {
 	id: number;
 	text: string;
 }
@@ -15,7 +16,7 @@ const Board: React.FC<IBoardProps> = ({ title }) => {
 	const [text, setText] = useState<string>("");
 	const [cards, setCards] = useState<ICard[]>([]);
 
-	const handleSubmit = (e: { preventDefault: () => void; }) => {
+	const handleSubmit = (e: { preventDefault: () => void }) => {
 		e.preventDefault();
 
 		const card = {
@@ -24,7 +25,7 @@ const Board: React.FC<IBoardProps> = ({ title }) => {
 		};
 
 		setCards([...cards, card]);
-		setText('');
+		setText("");
 	};
 
 	return (
@@ -32,10 +33,20 @@ const Board: React.FC<IBoardProps> = ({ title }) => {
 			<h2 className="px-4 py-2 text-center text-black text-lg font-bold">
 				{title}
 			</h2>
-			<article className="mx-2">
-				{cards.map((card: ICard) => (
-					<Tile key={card.id}>{card.text}</Tile>
-				))}
+			<article id="list" className="mx-2">
+				<ReactSortable
+					group="shared"
+					animation={200}
+					delay={1}
+					swap
+					multiDrag
+					setList={setCards}
+					list={cards}
+				>
+					{cards.map((card: ICard) => (
+						<Tile key={card.id}>{card.text}</Tile>
+					))}
+				</ReactSortable>
 			</article>
 			{!showForm && (
 				<button

@@ -1,4 +1,5 @@
 import Board from "./components/Board/Board";
+
 const App = () => {
 	return (
 		<div
